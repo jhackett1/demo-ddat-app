@@ -23,8 +23,7 @@ var bookController = {
       if(err){ return res.status(500).send('Error!') };
       // ...get metadata from the goodreads API
       goodreads.getMetadata(book.title, function(err, metadata){
-      if(err){ return res.status(500).send('Error!') };
-
+      if(err){ return console.log(err) };
         // ...and render the view with that data
         res.render('detail', {
           book: book,
