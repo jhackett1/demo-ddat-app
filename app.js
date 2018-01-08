@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-require('./services/goodreads.js')
 
 // Import controller & model
 var bookController = require("./controllers/bookController");
