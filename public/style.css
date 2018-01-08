@@ -24,7 +24,9 @@ header{
   align-items: center;
   padding: 20px;
   /* Give the header a subtle drop shadow */
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.2)
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  /*Always put header on top*/
+  z-index: 999;
 }
 header a {
   color: black;
@@ -45,6 +47,54 @@ main{
   /* Take up all free space on the screen between header and footer */
   flex: 1 1 auto;
   overflow-y: scroll;
+  padding: 20px
+}
+
+main .message{
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: #dfdfdf;
+}
+
+main img{
+  margin-bottom: 20px;
+}
+
+main h2{
+  margin-bottom: 20px
+}
+
+main ul li {
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  background-color: white;
+  padding: 20px;
+}
+
+main h5{
+  margin: 20px 0px 10px 0px;
+  color: grey
+}
+
+main p{
+  margin-top: 10px
+}
+
+main a{
+  color: blue;
+  text-decoration: none
+}
+
+
+main form input, main form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+main form button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1em;
 }
 
 /* FOOTER STYLES */
@@ -73,6 +123,11 @@ footer nav ul li a{
   align-items: center;
   text-decoration: none;
   color: black
+}
+
+footer nav ul li a.active{
+  color: grey;
+  pointer-events: none
 }
 
 footer nav ul li a i {

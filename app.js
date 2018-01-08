@@ -2,14 +2,18 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+require('./services/goodreads.js')
 
-// Require two routers
-var list = require('./routes/list');
-var detail = require('./routes/detail');
-var addNew = require('./routes/addNew');
+// Import controller & model
+var bookController = require("./controllers/bookController");
 
-// Get the JSON file for application config
-var config = require("./config.json");
+// Open database connection
+var mongoUrl = process.env.MONGODB_URI;
+mongoose.connect(mongoUrl, {useMongoClient: true}, function(err){
+  if(err) return console.log(err);
+  console.log("DB connection opened");
+})
 
 // Get the express app
 var app = express();
@@ -25,10 +29,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Set public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Assign a router to handle each URL pattern
-app.use('/', list);
-app.use('/detail/', detail);
-app.use('/add-new', addNew);
+// Assign controllers to routes
+app.get('/', bookController.getList)
+app.get('/detail/:id', bookController.getDetail)
+app.get('/add-new', bookController.getNew)
+app.post('/add-new/submit', bookController.postNew)
+app.post('/detail/:id/delete', bookController.delete)
 
 // Make this file accessible as an import
 module.exports = app;

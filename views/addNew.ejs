@@ -4,10 +4,24 @@
 <main>
   <h2>Add new</h2>
 
-  <form>
+  <% if(status === 'success'){ %>
+    <div class="message"><i class="fa fa-check-circle"></i> Your book was added successfully.</div>
+  <% } else if (status === 'error'){ %>
+    <div class="message"><i class="fa fa-exclamation-circle"></i> There was a problem adding that book. Please check form for errors.</div>
+  <% } %>
+
+  <form action="/add-new/submit" method="POST">
     <label for="title">Title</label>
-    <br>    
+    <br>
     <input type="text" name="title"></input>
+    <br>
+    <label for="genre">Genre</label>
+    <br>
+    <input type="text" name="genre"></input>
+    <br>
+    <label for="author">Author</label>
+    <br>
+    <input type="text" name="author"></input>
     <br>
     <label for="title">Description</label>
     <br>
