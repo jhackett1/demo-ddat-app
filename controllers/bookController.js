@@ -22,10 +22,8 @@ var bookController = {
     Book.findById(req.params.id, function(err, book){
       if(err){ return res.status(500).send('Error!') };
       // ...get metadata from the goodreads API
-      goodreads(book.title, function(err, metadata){
+      goodreads.getMetadata(book.title, function(err, metadata){
       if(err){ return res.status(500).send('Error!') };
-
-      console.log(metadata)
 
         // ...and render the view with that data
         res.render('detail', {
