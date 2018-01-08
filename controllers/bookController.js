@@ -1,6 +1,6 @@
 // Import the model
 var Book = require("../models/bookModel");
-var goodreads = require('../services/goodreads.js');
+var goodreads = require('../services/goodReads.js');
 
 var bookController = {
 
