@@ -1,0 +1,81 @@
+/*RESET STYLES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: sans-serif;
+}
+
+.app-container{
+  /* The app can only be the height of the viewport */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* Do NOT allow the app to scroll off the screen */
+  overflow: hidden;
+}
+
+/* HEADER STYLES */
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  /* Give the header a subtle drop shadow */
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2)
+}
+header a {
+  color: black;
+  text-decoration: none;
+}
+header a h1{
+  font-size: 1.2em;
+}
+header img{
+  width: 40px;
+  height: 40px;
+  /*  Rounded corners  */
+  border-radius: 100%;
+/*   margin: 10px */
+}
+
+main{
+  /* Take up all free space on the screen between header and footer */
+  flex: 1 1 auto;
+  overflow-y: scroll;
+}
+
+/* FOOTER STYLES */
+footer{
+  /* Give the footer a shadow too */
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2)
+}
+
+footer nav ul{
+  display: flex;
+  /*  Put everything on one line  */
+  flex-direction: row;
+  /* Equally space everything  */
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer nav ul li{
+  /* Stop everything from hitting the edges of the footer   */
+  padding: 10px;
+}
+
+footer nav ul li a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black
+}
+
+footer nav ul li a i {
+  /* Add some spacing between menu icons and text */
+  margin-bottom: 5px
+}
