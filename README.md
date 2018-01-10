@@ -11,4 +11,13 @@ It also calls the *goodreads.com* API to populate the detail view with additiona
 
 The app doesn't understand the concept of users, authentication or authorisation. Any user can anonymously edit the book library.
 
-To run it, make sure that the two environment variables ```MONGODB_URI and ```GOODREADS_API_KEY are set, and then run ```npm install```, followed by ```npm start```.
+Installation
+-----------
+
+To run it, make sure that the two environment variables ```MONGODB_URI``` and ```GOODREADS_API_KEY``` are set.
+
+Then run ```npm install``` to install dependencies using NPM.
+
+Finally, run ```npm start```.
+
+The application should then be available on **localhost** on port 4000.
