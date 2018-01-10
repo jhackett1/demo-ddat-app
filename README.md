@@ -16,7 +16,7 @@ Installation
 
 To run it, make sure that the two environment variables ```MONGODB_URI``` and ```GOODREADS_API_KEY``` are set.
 
-The easiest way to do that is to create an app.env file with the data, and run ```source app.env``` in your terminal window before running the application.
+The easiest way to do that is to create an app.env file with the data, and run ```source app.env``` in your terminal window before running the application. The application will not start without these environment variables set in some way.
 
 Then run ```npm install``` to install dependencies using NPM.
 
