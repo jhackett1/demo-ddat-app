@@ -3,7 +3,7 @@ MDTP apprentices demo app
 
 This is a quick, dirty Node/Express/MongoDB application which functions as a library of books.
 
-It serves a library (list) view, a detailed view of each book, and a form for new books to be added to the library.
+It serves a library (list) view, a detailed view of each book, and a form for new books to be added to the library. Views are written using the **nunjucks** templating language.
 
 The application stores its data in a **MongoDB** database, and uses **Mongoose** to access the DB.
 

@@ -1,0 +1,21 @@
+{% include "header.njk" %}
+
+<!-- The scrollable main view container -->
+<main>
+  <h2>All books</h2>
+
+  <ul>
+    {% for book in books %}
+
+      <li>
+        <h5>{{ book.author }}</h5>
+        <a href="/detail/{{ book._id  }}"><h3>{{ book.title }}</h3></a>
+        <p>{{ book.description }}</p>
+      </li>
+
+    {% endfor %}
+  </ul>
+
+</main>
+
+{% include "footer.njk" %}

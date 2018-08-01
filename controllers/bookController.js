@@ -1,5 +1,5 @@
 // Import the model
-var Book = require("../models/bookModel");
+var Book = require("../models/book");
 var goodreads = require('../services/goodReads.js');
 
 var bookController = {
@@ -10,7 +10,7 @@ var bookController = {
     Book.find(function(err, books){
       if(err){ return res.status(500).send('Error!') };
       // ...and render the view with that data
-      res.render('list', {
+      res.render('list.njk', {
         books: books
       });
     })
@@ -25,7 +25,7 @@ var bookController = {
       goodreads.getMetadata(book.title, function(err, metadata){
       if(err){ return console.log(err) };
         // ...and render the view with that data
-        res.render('detail', {
+        res.render('detail.njk', {
           book: book,
           metadata: metadata[0]
         });
@@ -35,7 +35,7 @@ var bookController = {
 
   // Handle a request for the add new form
   getNew: function(req, res){
-    res.render('addNew', {status: false});
+    res.render('addNew.njk', {status: false});
   },
 
   // Handle a form submission and save to DB
@@ -45,7 +45,7 @@ var bookController = {
     // ...and save it to the DB
     newBook.save(function(err, newBook){
       if(err){ return res.status(500).render('addNew', {status: 'error'}); };
-      res.status(201).render('addNew', {status: 'success'});
+      res.status(201).render('addNew.njk', {status: 'success'});
     });
   },
 

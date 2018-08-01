@@ -1,0 +1,21 @@
+{% include "header.njk" %}
+
+<!-- The scrollable main view container -->
+<main>
+  {% if metadata %}
+    <img src="{{ metadata.image_url }}" />
+  {% endif %}
+  <h5>{{ book.author }}<h5>
+  <h2>{{ book.title }}</h2>
+  <h5>{{ book.genre }}</h5>
+  <p>{{ book.description }}</p>
+  {% if metadata %}
+    <h5>Description from Goodreads</h5>
+    <p>{{ metadata.description }}</p>
+  {% endif %}
+  <form action="/detail/{{ book._id }}/delete" method="POST">
+    <button type="submit">Delete book</button>
+  </form>
+</main>
+
+{% include "footer.njk" %}

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var bookModel = new mongoose.Schema({
+var model = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -10,4 +10,4 @@ var bookModel = new mongoose.Schema({
   genre: String
 })
 
-module.exports = mongoose.model('Book', bookModel);
+module.exports = mongoose.model('Book', model);

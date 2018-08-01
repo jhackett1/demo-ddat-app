@@ -1,14 +1,14 @@
-<%- include  header.ejs %>
+{% include "header.njk" %}
 
 <!-- The scrollable main view container -->
 <main>
   <h2>Add new</h2>
 
-  <% if(status === 'success'){ %>
+  {% if (status === 'success') %}
     <div class="message"><i class="fa fa-check-circle"></i> Your book was added successfully.</div>
-  <% } else if (status === 'error'){ %>
+  {% elif (status === 'error') %}
     <div class="message"><i class="fa fa-exclamation-circle"></i> There was a problem adding that book. Please check form for errors.</div>
-  <% } %>
+  {% endif %}
 
   <form action="/add-new/submit" method="POST">
     <label for="title">Title</label>
@@ -32,4 +32,4 @@
 
 </main>
 
-<%- include  footer.ejs %>
+{% include "footer.njk" %}
