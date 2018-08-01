@@ -1,4 +1,4 @@
-MDTP apprentices demo app
+DDaT demo app
 =========================
 
 This is a quick, dirty Node/Express/MongoDB application which functions as a library of books.
